@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'blog/main.css' %}" />
+
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Blog</title>
+    {% endif %}
+  </head>
+  <body>
+    <header>
+      <h2 class="text-center logo">My Blog</h2>
+    </header>
+    <div class="form">
+      <h2 class="text-center">Your Message Please</h2>
+      <form action="" method="post">
+        {% csrf_token %} 
+
+        
+        {% for f in form %}
+          <p>{{f.label}}</p>
+          {{f}}
+          
+          {% if f.err %}
+             
+             {% for e in f.err %}
+                <small class="red-text">{{f.err}}</small>
+             {% endfor %}
+               
+          {% endif %}
+            
+        {% endfor %}
+        <br>
+          
+        <input type="submit" value="Submit" class="mybtn" />
+      </form>
+    </div>
+    <div class="messages">
+      
+      {% for post in posts %}
+        <div class="post">
+          <h1>{{post.title}}</h1>
+          <h2>post by <span class="author">{{post.name}}</span></h1> on {{post.date_created}}
+          <br>
+          <p class="post-content">{{post.message}}</p>
+          <a href="" class="mybtn">Update Post</a>
+          <a href="" class="danger-btn">Delete</a>
+        </div>
+      {% endfor %}
+        
+    </div>
+    <script src="{% static 'blog/index.js' %}"></script>
+  </body>
+</html>
+

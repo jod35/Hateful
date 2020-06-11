@@ -1,0 +1,58 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+header {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.096);
+  padding: 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: yellow;
+  left: 0;
+  opacity: 100%;
+  z-index: 1;
+}
+.form {
+  width: 80%;
+  margin: auto;
+  margin-top: 150px;
+}
+.form-control {
+  width: 100%;
+}
+.mybtn {
+  padding: 20px;
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 7px;
+}
+.text-center {
+  text-align: center;
+  color: dodgerblue;
+}
+.messages {
+  position: absolute;
+}
+.post {
+  padding: 20px;
+  color: black;
+  line-height: 2;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.096);
+  width: 80%;
+  margin: auto;
+}
+.author {
+  color: dodgerblue;
+}
+
+.danger-btn {
+  padding: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 7px;
+}
